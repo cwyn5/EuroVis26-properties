@@ -1,0 +1,1 @@
+# EuroVis26-properties
