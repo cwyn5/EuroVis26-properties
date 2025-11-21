@@ -49,4 +49,17 @@ plt.xlabel("Component 1")
 plt.ylabel("Component 2")
 
 plt.grid(True)
-plt.savefig('mcaPlot.png')
+#plt.show()
+
+#plt.savefig('mcaPlot.png')
+
+column_loadings = mca.column_coordinates(df_mca)
+print("Column Loadings (MCA):")
+print(column_loadings)
+
+column_loadings.to_csv('loadings.csv')
+
+
+row_scores = mca.row_coordinates(df_mca)
+print("\nRow Scores (MCA):")
+print(row_scores)
