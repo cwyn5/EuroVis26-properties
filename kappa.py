@@ -5,9 +5,9 @@ import pingouin as pg
 import sys
 
 def data_preprocess():
-    r1 = pd.read_excel("Validation Study_Sophie.xlsx")
+    r1 = pd.read_excel("Validation Study_ Sophie - UPDATED.xlsx")
 
-    r2 = pd.read_excel("CN_processed_FIXED.xlsx")
+    r2 = pd.read_excel("v3_CN_processed.xlsx")
 
     common_cols = r1.columns.intersection(r2.columns)
 
@@ -82,7 +82,7 @@ def icc_analysis(df1_input, df2_input):
     df = pd.DataFrame.from_dict(results, orient='index').transpose()
 
     # Save to CSV
-    df.to_csv('output_icc.csv', index=False)
+    df.to_csv('output_icc_updated.csv', index=False)
 
 def weighted_kappa_analysis(df1_input, df2_input):
     r1_file = df1_input.copy()
@@ -127,7 +127,7 @@ def weighted_kappa_analysis(df1_input, df2_input):
     df = pd.DataFrame.from_dict(results, orient='index').transpose()
 
     # Save to CSV
-    df.to_csv('output_kappa.csv', index=False)
+    df.to_csv('output_kappa_updated.csv', index=False)
 
 if __name__ == "__main__":
     # 1. Get Data

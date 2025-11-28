@@ -93,8 +93,8 @@ def generate_aligned_chart(df1, df2, name1="Sophie", name2="Cat"):
     print(f"Saved chart to {filename}")
 
 if __name__ == "__main__":
-    df_sophie = load_and_transpose("Validation Study_Sophie.xlsx", "Sophie")
-    df_cat = load_and_transpose("CN_processed.xlsx", "Cat")
+    df_sophie = load_and_transpose("Validation Study_Sophie - UPDATED.xlsx", "Sophie")
+    df_cat = load_and_transpose("v3_CN_processed.xlsx", "Cat")
     
     if df_sophie is not None and df_cat is not None:
         generate_aligned_chart(df_sophie, df_cat)
