@@ -5,18 +5,18 @@ import pingouin as pg
 import sys
 
 def data_preprocess():
-    r1 = pd.read_excel("Validation Study_ Sophie - UPDATED.xlsx")
+    r1 = pd.read_excel("SS_Updated_Coding.xlsx")
 
-    r2 = pd.read_excel("v3_CN_processed.xlsx")
+    r2 = pd.read_excel("CN_Updated_Coding.xlsx")
+
+    r1.columns = r1.columns.astype(str).str.replace(' ', '').str.strip()
+    r2.columns = r2.columns.astype(str).str.replace(' ', '').str.strip()
 
     common_cols = r1.columns.intersection(r2.columns)
 
     # Subset both DataFrames to those columns
     df1_common = r1[common_cols]
     df2_common = r2[common_cols]
-
-    df1_common.to_csv('sophie_shared.csv')
-    df2_common.to_csv('cat_shared.csv')
 
     r1_file = df1_common.T
 
